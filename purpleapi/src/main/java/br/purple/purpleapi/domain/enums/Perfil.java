@@ -1,5 +1,8 @@
 package br.purple.purpleapi.domain.enums;
 
+import lombok.Getter;
+
+@Getter
 public enum Perfil {
 
 	ADMIN(0, "ROLE_ADMIN"), CLIENTE(1, "ROLE_CLIENTE"), OPERADOR(2, "ROLE_OPERADOR");
@@ -10,14 +13,6 @@ public enum Perfil {
 	private Perfil(Integer codigo, String descricao) {
 		this.codigo = codigo;
 		this.descricao = descricao;
-	}
-
-	public Integer getCodigo() {
-		return codigo;
-	}
-
-	public String getDescricao() {
-		return descricao;
 	}
 
 	public static Perfil toEnum(Integer cod) {
