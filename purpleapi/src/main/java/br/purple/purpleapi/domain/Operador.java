@@ -2,14 +2,15 @@ package br.purple.purpleapi.domain;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import br.purple.purpleapi.domain.dtos.OperadorDTO;
 import br.purple.purpleapi.domain.enums.Perfil;
-import br.purple.purpleapi.domain.enums.Pessoa;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -26,6 +27,21 @@ public class Operador extends Pessoa {
 	public Operador() {
 		super();
 		addPerfil(Perfil.CLIENTE);
+	}
+	
+	public Operador(Integer id, String nome, String cpf, String email, String senha) {
+		super(id, nome, cpf, email, senha);
+		addPerfil(Perfil.CLIENTE);
+	}
+	
+	public Operador(OperadorDTO obj) {
+		super();
+		this.id = obj.getId();
+		this.nome = obj.getNome();
+		this.cpf = obj.getCpf();
+		this.email = obj.getEmail();
+		this.senha = obj.getSenha();
+		this.perfis = obj.getPerfis().stream().map(x -> x.getCodigo()).collect(Collectors.toSet());
 	}
 
 	public List<Produto> getProdutos() {
