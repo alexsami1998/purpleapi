@@ -9,7 +9,6 @@ import javax.persistence.OneToMany;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import br.purple.purpleapi.domain.enums.Perfil;
-import br.purple.purpleapi.domain.enums.Pessoa;
 
 @Entity
 public class Cliente extends Pessoa {
