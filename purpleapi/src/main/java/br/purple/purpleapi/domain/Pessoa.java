@@ -1,4 +1,4 @@
-package br.purple.purpleapi.domain.enums;
+package br.purple.purpleapi.domain;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -17,6 +17,7 @@ import javax.persistence.Id;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+import br.purple.purpleapi.domain.enums.Perfil;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -60,7 +61,7 @@ public abstract class Pessoa implements Serializable {
 		addPerfil(Perfil.CLIENTE);
 	}
 
-	public Set<Perfil> getperfis() {
+	public Set<Perfil> getPerfis() {
 		return perfis.stream().map(x -> Perfil.toEnum(x)).collect(Collectors.toSet());
 	}
 
