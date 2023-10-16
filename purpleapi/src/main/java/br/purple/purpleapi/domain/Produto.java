@@ -33,7 +33,7 @@ public class Produto implements Serializable {
 	private LocalDate dataFechamento;
 
 	private Status status;
-	private String nome;
+	private String titulo;
 	private String descricao;
 	private BigDecimal preco;
 	private Integer qntdEst;
@@ -51,12 +51,12 @@ public class Produto implements Serializable {
 		super();
 	}
 	
-	public Produto(Integer id, Status status, String nome, String descricao, BigDecimal preco, Integer qntdEst,
+	public Produto(Integer id, Status status, String titulo, String descricao, BigDecimal preco, Integer qntdEst,
 			String categoria, Operador operador, Cliente cliente) {
 		super();
 		this.id = id;
 		this.status = status;
-		this.nome = nome;
+		this.titulo = titulo;
 		this.descricao = descricao;
 		this.preco = preco;
 		this.qntdEst = qntdEst;
