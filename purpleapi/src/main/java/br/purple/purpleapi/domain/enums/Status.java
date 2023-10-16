@@ -1,5 +1,8 @@
 package br.purple.purpleapi.domain.enums;
 
+import lombok.Getter;
+
+@Getter
 public enum Status {
 	
 	ABERTO(0, "ABERTO"), ANDAMENTO(1, "ANDAMENTO"), FECHADO(2, "FECHADO");
@@ -10,14 +13,6 @@ public enum Status {
 	private Status (Integer codigo, String descricao) {
 		this.codigo = codigo;
 		this.descricao = descricao;
-	}
-	
-	public Integer getCodigo() {
-		return codigo;
-	}
-	
-	public String getDescricao() {
-		return descricao;
 	}
 	
 	public static Status toEnum(Integer cod) {
