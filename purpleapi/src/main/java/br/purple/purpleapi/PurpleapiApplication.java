@@ -1,4 +1,4 @@
-package br.purpleapi.purple;
+package br.purple.purpleapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
