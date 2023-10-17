@@ -28,8 +28,4 @@ public class DBService {
 		
 		pessoaRepository.saveAll(Arrays.asList(op1, op2));
 	}
-	
-	
-	
-
 }
