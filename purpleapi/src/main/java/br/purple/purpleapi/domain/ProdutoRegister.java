@@ -13,6 +13,7 @@ import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+import br.purple.purpleapi.domain.enums.Categoria;
 import br.purple.purpleapi.domain.enums.VendasOp;
 import lombok.Getter;
 import lombok.Setter;
@@ -38,7 +39,7 @@ public class ProdutoRegister implements Serializable {
 	private String descricao;
 	private BigDecimal preco;
 	private Integer estoq;
-	private String categoria;
+	private Categoria categoria;
 	private String marca;
 	private BigDecimal precoAnt;
 	private String codigoProd;
@@ -51,7 +52,7 @@ public class ProdutoRegister implements Serializable {
 	private Integer estoqMin; // limite minimo de estoque
 	private Boolean estoqBaix; // Notificacao de estoque baixo -> reposicao
 	// opcoes de venda
-	private VendasOp vendasOp; // ******criar ENUM******
+	private VendasOp vendasOp; 
 	private String obs;
 
 	@ManyToOne
@@ -63,7 +64,7 @@ public class ProdutoRegister implements Serializable {
 	}
 
 	public ProdutoRegister(Integer id, String titulo, String descricao, BigDecimal preco, Integer estoq,
-			String categoria, String marca, BigDecimal precoAnt, String codigoProd, BigDecimal peso, Integer estoqIni,
+			Categoria categoria, String marca, BigDecimal precoAnt, String codigoProd, BigDecimal peso, Integer estoqIni,
 			Integer estoqMin, Boolean estoqBaix, VendasOp vendasOp, String obs, Operador operador) {
 		super();
 		this.id = id;
