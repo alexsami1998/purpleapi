@@ -28,7 +28,7 @@ public class ProdutoRegDTO implements Serializable {
 	private String descricao;
 	@NotNull(message = "O campo PREÇO é requerido")
 	private BigDecimal preco;
-	@NotNull(message = "O campo ESTOQUE é requerido")
+	//@NotNull(message = "O campo ESTOQUE é requerido") em tratamento após implementar lógica de baixa de estoque.
 	private Integer estoq;
 	@NotNull(message = "O campo CATEGORIA é requerido")
 	private Integer categoria;
